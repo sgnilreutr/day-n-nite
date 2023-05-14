@@ -1,0 +1,58 @@
+{
+  "name": "light-dark-mode-nextjs",
+  "license": "MIT",
+  "version": "0.0.1",
+  "private": false,
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.umd.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "react": "^16.8 || ^17.0 || ^18.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.16.3",
+    "@types/react": "18.2.5",
+    "@types/react-dom": "18.2.3",
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "10.4.14",
+    "dprint": "0.36.1",
+    "eslint": "8.39.0",
+    "eslint-config-next": "^13.4.0",
+    "husky": "8.0.3",
+    "lint-staged": "13.2.2",
+    "next": "13.3.0",
+    "postcss": "^8.4.23",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "3.3.2",
+    "turbo": "^1.9.4",
+    "typescript": "5.0.4",
+    "vite": "^4.3.5",
+    "vite-plugin-dts": "^2.3.0",
+    "vite-tsconfig-paths": "^4.2.0"
+  },
+  "scripts": {
+    "build": "vite build",
+    "build-tailwind": "NODE_ENV=production npx tailwindcss -i ./src/globals.css -o ./dist/globals.css --postcss --minify",
+    "clean": "rm -rf dist",
+    "dev": "storybook",
+    "format-check": "dprint check",
+    "format": "dprint fmt",
+    "husky-install": "husky install",
+    "lint-staged": "lint-staged --config lint-staged.config.mjs",
+    "lint": "tsc",
+    "start": "next start",
+    "typecheck": "tsc --incremental --noEmit",
+    "update-deps": "yarn upgrade-interactive --latest"
+  }
+}
