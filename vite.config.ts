@@ -7,6 +7,10 @@ import viteTsconfigPaths from "vite-tsconfig-paths";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    host: true,
+    port: 3000
+  },
   build: {
     outDir: 'dist',
     emptyOutDir: false,
@@ -31,11 +35,24 @@ export default defineConfig({
       },
     },
   },
+  optimizeDeps: {
+    esbuildOptions: {
+      target: 'es2020',
+    },
+  },
+  esbuild: {
+    // https://github.com/vitejs/vite/issues/8644#issuecomment-1159308803
+    logOverride: { 'this-is-undefined-in-esm': 'silent' },
+  },
   plugins: [
     dts({
       insertTypesEntry: true,
     }),
-    react(),
+    react({
+      babel: {
+        plugins: ['babel-plugin-macros', 'babel-plugin-styled-components'],
+      },
+    }),
     viteTsconfigPaths()
   ],
   css: {

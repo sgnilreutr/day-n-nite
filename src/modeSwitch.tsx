@@ -53,7 +53,7 @@ export default function ModeSwitch() {
     <button
       onClick={toggleSchemeMode}
       className={classNames(`${before}`,
-        'flex gap-2 items-center before:text-zinc-400 before:text-[12px] before:font-mono'
+        'flex gap-2 items-center before:text-zinc-400 before:text-[12px] before:font-mono min-h-[32px]'
       )}
     >
       <span
