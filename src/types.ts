@@ -1,4 +1,4 @@
-import { colorSchemeMode } from './constants'
+import { colorSchemeMode } from './lib/constants'
 
 export type ColorSchemeMode =
   (typeof colorSchemeMode)[keyof typeof colorSchemeMode]

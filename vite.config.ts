@@ -7,10 +7,6 @@ import viteTsconfigPaths from "vite-tsconfig-paths";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server: {
-    host: true,
-    port: 3000
-  },
   build: {
     outDir: 'dist',
     emptyOutDir: false,
@@ -35,24 +31,11 @@ export default defineConfig({
       },
     },
   },
-  optimizeDeps: {
-    esbuildOptions: {
-      target: 'es2020',
-    },
-  },
-  esbuild: {
-    // https://github.com/vitejs/vite/issues/8644#issuecomment-1159308803
-    logOverride: { 'this-is-undefined-in-esm': 'silent' },
-  },
   plugins: [
     dts({
       insertTypesEntry: true,
     }),
-    react({
-      babel: {
-        plugins: ['babel-plugin-macros', 'babel-plugin-styled-components'],
-      },
-    }),
+    react(),
     viteTsconfigPaths()
   ],
   css: {
@@ -63,3 +46,18 @@ export default defineConfig({
     },
   }
 });
+
+
+// const banner = require("rollup-plugin-banner2");
+
+// // TSDX docs: https://tsdx.io/customization
+// module.exports = {
+//   // Rollup docs: https://rollupjs.org/guide/en/#rolluprollup
+//   rollup(config, _options) {
+//     return {
+//       ...config,
+//       // TODO: Replace with banner option when terser supports "use client" directive https://github.com/terser/terser/issues/1320
+//       plugins: [...config.plugins, banner(() => "'use client';")],
+//     };
+//   },
+// };
