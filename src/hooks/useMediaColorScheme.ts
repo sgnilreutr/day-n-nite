@@ -1,6 +1,7 @@
-import { colorSchemeMode } from './constants'
+import { colorSchemeMode } from '../lib/constants'
 import { useEffect, useState } from 'react'
-import type { SystemColorSchemeMode } from './types'
+import type { SystemColorSchemeMode } from '../types'
+
 export default function useMediaColorScheme() {
   const [systemScheme, setSystemScheme] =
     useState<SystemColorSchemeMode>(undefined)

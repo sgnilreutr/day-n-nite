@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { colorSchemeMode, localStorageKey } from './constants'
-import type { ActionType, ColorSchemeMode } from './types'
+import { colorSchemeMode, localStorageKey } from '../lib/constants'
+import type { ActionType, ColorSchemeMode } from '../types'
 import useMediaColorScheme from './useMediaColorScheme'
 
 const handleLocalStorage = (actionType: ActionType, scheme?: ColorSchemeMode) => {

@@ -1,29 +1,28 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "jsx": "preserve",
-    "target": "esnext",
-    "module": "esnext",
-    "lib": [
-      "dom",
-      "es2019"
-    ],
-    "noEmit": true,
-    "moduleResolution": "node",
+    "allowJs": false,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true,
+    "declaration": true,
+    "esModuleInterop": false,
     "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true
+    "importHelpers": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "rootDir": "./src",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "ESNext",
+    "useDefineForClassFields": true
   },
   "include": [
     "src",

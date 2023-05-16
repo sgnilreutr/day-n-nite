@@ -1,11 +1,9 @@
-"use client"
-
 import type { ReactNode } from 'react'
-import classNames from './classNames'
-import type { ColorSchemeMode, SystemColorSchemeMode } from './types'
-import useColorScheme from './useColorScheme'
-import useMediaColorScheme from './useMediaColorScheme'
-import { colorSchemeMode } from './constants'
+import classNames from '../lib/classNames'
+import type { ColorSchemeMode, SystemColorSchemeMode } from '../types'
+import useColorScheme from '../hooks/useColorScheme'
+import useMediaColorScheme from '../hooks/useMediaColorScheme'
+import { colorSchemeMode } from '../lib/constants'
 import { MoonIcon, SunIcon } from './icons'
 
 const schemeToDisplay: Record<ColorSchemeMode, Record<string, ReactNode>> = {
@@ -53,7 +51,7 @@ export default function ModeSwitch() {
     <button
       onClick={toggleSchemeMode}
       className={classNames(`${before}`,
-        'flex gap-2 items-center before:text-zinc-400 before:text-[12px] before:font-mono'
+        'flex gap-2 items-center before:text-zinc-400 before:text-[12px] before:font-mono min-h-[32px]'
       )}
     >
       <span
