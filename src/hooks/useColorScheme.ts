@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { colorSchemeMode, localStorageKey } from '../lib/constants'
 import type { ActionType, ColorSchemeMode } from '../types'
 import useMediaColorScheme from './useMediaColorScheme'

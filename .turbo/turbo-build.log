@@ -2,14 +2,16 @@ yarn run v1.22.19
 $ vite build
 vite v4.3.5 building for production...
 transforming...
-✓ 15 modules transformed.
+[plugin:vite:resolve] Module "path" has been externalized for browser compatibility, imported by "/Users/r.tuerlings/Coding/light-dark-mode-nextjs/node_modules/find-package-json/index.js". See http://vitejs.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin:vite:resolve] Module "fs" has been externalized for browser compatibility, imported by "/Users/r.tuerlings/Coding/light-dark-mode-nextjs/node_modules/find-package-json/index.js". See http://vitejs.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+✓ 21 modules transformed.
 rendering chunks...
 computing gzip size...
-dist/index.js  25.11 kB │ gzip: 7.60 kB
-dist/index.umd.cjs  16.82 kB │ gzip: 6.55 kB
+dist/index.js  53.01 kB │ gzip: 14.09 kB
+dist/index.umd.cjs  37.34 kB │ gzip: 12.31 kB
 
 [vite:dts] Start generate declaration files...
-✓ built in 12.14s
-[vite:dts] Declaration files built in 10776ms.
+✓ built in 8.03s
+[vite:dts] Declaration files built in 6555ms.
 
-Done in 18.60s.
+Done in 14.92s.
