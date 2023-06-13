@@ -1,6 +1,4 @@
 day-n-nite
-
-day-n-nite
 =======================
 
 This is a simple React and Next.js project that allows users to toggle between light and dark modes, with an additional "auto" mode that listens to the prefers-color-scheme media element. The mode setting is stored using localStorage, so that it persists even after the user leaves the page.
