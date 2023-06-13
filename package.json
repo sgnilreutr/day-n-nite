@@ -1,7 +1,7 @@
 {
   "name": "day-n-nite",
   "license": "MIT",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.1-beta.2",
   "private": false,
   "type": "module",
   "source": "src/index.ts",
@@ -64,6 +64,10 @@
     "typecheck": "tsc --incremental --noEmit",
     "update-deps": "yarn upgrade-interactive --latest",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "publish:stable": "yarn bump:prepare && yarn bump:release && yarn clean && yarn build && yarn publish --tolerate-republish --access public",
+    "publish:no-version": "yarn clean && yarn build && yarn publish --tolerate-republish --access public",
+    "bump:prepare": "yarn changeset",
+    "bump:release": "yarn changeset version"
   }
 }
