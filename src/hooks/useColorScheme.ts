@@ -3,6 +3,24 @@ import { colorSchemeMode, localStorageKey } from '../lib/constants'
 import type { ActionType, ColorSchemeMode } from '../types'
 import useMediaColorScheme from './useMediaColorScheme'
 
+/**
+ * Handles the localStorage operations for storing and retrieving color scheme.
+ *
+ * @param {ActionType} actionType - The type of action to perform (set, get, remove).
+ * @param {ColorSchemeMode} [scheme] - The color scheme value to store (only used for "set" action).
+ * @returns {void|ColorSchemeMode} - Returns nothing for "set" and "remove" actions, and the stored color scheme value for "get" action.
+ *
+ * @example
+ * // Set color scheme
+ * handleLocalStorage('set', 'dark');
+ *
+ * // Get color scheme
+ * const storedScheme = handleLocalStorage('get');
+ * console.log(storedScheme); // Output: 'dark'
+ *
+ * // Remove color scheme
+ * handleLocalStorage('remove');
+ */
 const handleLocalStorage = (actionType: ActionType, scheme?: ColorSchemeMode) => {
   try {
     switch (actionType) {
@@ -30,6 +48,29 @@ const handleLocalStorage = (actionType: ActionType, scheme?: ColorSchemeMode) =>
   }
 }
 
+/**
+ * Custom hook for managing the color scheme in a React component.
+ *
+ * @returns {Object} An object containing the current color scheme and a function to update it.
+ *
+ * @example
+ * // Usage
+ * function MyComponent() {
+ *   const { colorScheme, setColorScheme } = useColorScheme();
+ *
+ *   const handleChangeColorScheme = (newScheme) => {
+ *     setColorScheme(newScheme);
+ *   };
+ *
+ *   return (
+ *     <div>
+ *       <p>Current color scheme: {colorScheme}</p>
+ *       <button onClick={() => handleChangeColorScheme('dark')}>Set Dark</button>
+ *       <button onClick={() => handleChangeColorScheme('light')}>Set Light</button>
+ *     </div>
+ *   );
+ * }
+ */
 export default function useColorScheme() {
   const [colorScheme, setColorScheme] = useState<ColorSchemeMode>(
     colorSchemeMode.auto

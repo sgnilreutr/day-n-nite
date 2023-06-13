@@ -2,6 +2,23 @@ import { colorSchemeMode } from '../lib/constants'
 import { useEffect, useState } from 'react'
 import type { SystemColorSchemeMode } from '../types'
 
+/**
+ * Custom hook for detecting the system color scheme in a React component.
+ *
+ * @returns {Object} An object containing the current system color scheme.
+ *
+ * @example
+ * // Usage
+ * function MyComponent() {
+ *   const { systemScheme } = useMediaColorScheme();
+ *
+ *   return (
+ *     <div>
+ *       <p>System color scheme: {systemScheme}</p>
+ *     </div>
+ *   );
+ * }
+ */
 export default function useMediaColorScheme() {
   const [systemScheme, setSystemScheme] =
     useState<SystemColorSchemeMode>(undefined)

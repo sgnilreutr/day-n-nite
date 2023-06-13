@@ -33,6 +33,12 @@ const getActiveIcon = (
   return schemeToDisplay[colorScheme].icon
 }
 
+/**
+* Represents a mode switch component.
+* @returns {JSX.Element} The mode switch button.
+*
+* export default function ModeSwitch() {
+*/
 export default function ModeSwitch() {
   const { colorScheme, setColorScheme } = useColorScheme()
   const { systemScheme } = useMediaColorScheme()
