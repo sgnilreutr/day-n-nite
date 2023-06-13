@@ -1,6 +1,6 @@
-Light-Dark-Mode-Next.js
+day-n-nite
 
-Light-Dark-Mode-Next.js
+day-n-nite
 =======================
 
 This is a simple React and Next.js project that allows users to toggle between light and dark modes, with an additional "auto" mode that listens to the prefers-color-scheme media element. The mode setting is stored using localStorage, so that it persists even after the user leaves the page.
@@ -12,19 +12,31 @@ Features
 *   Auto mode that listens to prefers-color-scheme media element
 *   Mode setting is stored in localStorage
 *   Compatible with React and Next.js projects
+*   Written in TypeScript
+*   Uses tailwindcss for styling
 
 Installation
 ------------
 
-1.  Install the `light-dark-mode-nextjs` package using npm:
+1.  Install the `day-n-nite` package in your project:
 
-    npm install light-dark-mode-nextjs
+    `npm i day-n-nite`
+    `yarn add day-n-nite`
+    `pnpm i day-n-nite`
+
+2.  Set the path and darkmode for tailwind.config.js in your project:
+
+    `module.exports = {
+      content: [..., "./node_modules/day-n-nite/dist/**/*.{js,ts,jsx,tsx}"],
+      darkMode: 'class',
+      ...
+    }`
 
 3.  Import the `ModeSwitch` component from the package in your project:
 
-    import { modeSwitch } from 'light-dark-mode-nextjs';
+    import { modeSwitch } from 'day-n-nite';
 
-5.  Use the `ModeSwitch` component in your React or Next.js component:
+4.  Use the `ModeSwitch` component in your React or Next.js component:
 
     const MyComponent = () => {
       return (

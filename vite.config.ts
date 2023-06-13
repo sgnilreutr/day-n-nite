@@ -8,20 +8,18 @@ import viteTsconfigPaths from "vite-tsconfig-paths";
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    outDir: 'dist',
-    emptyOutDir: false,
+    // outDir: 'dist',
+    // emptyOutDir: false,
     lib: {
-      // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'index',
-      // the proper extensions will be added
-      fileName: 'index'
+      fileName: 'index',
+      name: 'day-n-nite'
     },
     rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
       external: ['react', 'react-dom'],
       output: {
+        dir: resolve(__dirname, 'dist'),
+        exports: 'named',
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
@@ -35,18 +33,16 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
     }),
-    react(),
-    viteTsconfigPaths()
   ],
-  css: {
-    postcss: {
-      plugins: [
-        tailwindcss('./tailwind.config.cjs'),
-      ],
-    },
-  }
 });
 
+// css: {
+//   postcss: {
+//     plugins: [
+//       tailwindcss('./tailwind.config.cjs'),
+//     ],
+//   },
+// }
 
 // const banner = require("rollup-plugin-banner2");
 
