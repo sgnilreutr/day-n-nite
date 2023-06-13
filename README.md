@@ -38,14 +38,14 @@ Installation
 
 4.  Use the `ModeSwitch` component in your React or Next.js component:
 
-    const MyComponent = () => {
+    `const MyComponent = () => {
       return (
         <div>
           <h1>My App</h1>
           <ModeSwitch />
         </div>
       );
-    };
+    };`
 
 That's it! Your users can now toggle between light and dark mode, and their preference will be stored in localStorage.
 
